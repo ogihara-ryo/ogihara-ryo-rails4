@@ -47,6 +47,9 @@ group :development do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # rails c で起動する対話式コンソールを irb から pry に変更する
+  gem 'pry-rails'
+
+  # binding.pry コールした場所がブレークポイントとなる
+  gem 'pry-byebug'
 end
