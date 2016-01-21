@@ -17,3 +17,6 @@ rake db:migrate
 
 ## デプロイ先
 [http://ogihara-ryo.herokuapp.com](http://ogihara-ryo.herokuapp.com)
+
+## ライセンス
+[MIT License](https://github.com/ogihara-ryo/ogihara-ryo/blob/master/LICENSE)
