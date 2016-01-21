@@ -26,6 +26,9 @@ gem 'jquery-rails'
 # ページの移動をAjaxに置き換えることで、JavaScriptやCSSの読み込みを省略して高速化する
 gem 'turbolinks'
 
+# 'annotate' コマンドで各ファイルに schema 情報などをコメントする
+gem 'annotate'
+
 group :development do
   # 例外ページにコンソールを設置し、View ファイルから console を呼ぶとコンソールを起動する
   gem 'web-console', '~> 2.0'
