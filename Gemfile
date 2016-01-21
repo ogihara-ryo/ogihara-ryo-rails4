@@ -36,6 +36,9 @@ group :development do
   # エラーページを強化する
   gem 'better_errors'
 
+  # アセットパイプラインのログを表示しない
+  gem 'quiet_assets'
+
    # アプリケーションプリローダー
   gem 'spring'
 end
