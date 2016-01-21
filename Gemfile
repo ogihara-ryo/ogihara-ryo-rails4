@@ -4,40 +4,37 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 gem 'rails', '4.2.5'
 
-# Use postgresql as the database for Active Record
+# Heroku にデプロイするため、ORDBMS に PostgreSQL を選択する
 gem 'pg', '~> 0.15'
-# Use SCSS for stylesheets
+
+# スタイルシートに SCSS を使用する
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
+
+# JavaScript のホワイトスペースを削除したり、条件分岐を条件演算子に変更したりで圧縮する
+# config/environments/production.rb の config.assets.js_compressor = :uglifier で活性
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
+
+# Assets と View で CoffeeScript を使用する
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
+
+# JavaScript のエンジン V8 を Ruby から利用する
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+# JavaScript のライブラリ jQuery を使用する
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+
+# ページの移動をAjaxに置き換えることで、JavaScriptやCSSの読み込みを省略して高速化する
 gem 'turbolinks'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+  # 例外ページにコンソールを設置し、View ファイルから console を呼ぶとコンソールを起動する
+  gem 'web-console', '~> 2.0'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+   # アプリケーションプリローダー
+  gem 'spring'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
