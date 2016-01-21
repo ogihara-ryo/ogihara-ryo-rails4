@@ -30,6 +30,9 @@ gem 'turbolinks'
 gem 'annotate'
 
 group :development do
+  # n + 1 問題を検出する
+  gem 'bullet'
+
   # 例外ページにコンソールを設置し、View ファイルから console を呼ぶとコンソールを起動する
   gem 'web-console', '~> 2.0'
 
