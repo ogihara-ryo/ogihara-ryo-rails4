@@ -1,28 +1,19 @@
-== README
+# [Ogihara Ryo's Web site](http://ogihara-ryo.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境
+- Ruby 2.3.0
+- Rails 4.2.5
 
-Things you may want to cover:
+## インストール
+```
+cp config/database.yml.example config/database.yml
+bundle
+rake db:create
+rake db:migrate
+```
 
-* Ruby version
+## 仕様
+[https://github.com/ogihara-ryo/ogihara-ryo/wiki/設計思想メモ](https://github.com/ogihara-ryo/ogihara-ryo/wiki/設計思想メモ)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## デプロイ先
+[http://ogihara-ryo.herokuapp.com](http://ogihara-ryo.herokuapp.com)
