@@ -14,6 +14,9 @@ gem 'sass-rails', '~> 5.0'
 # config/environments/production.rb の config.assets.js_compressor = :uglifier で活性
 gem 'uglifier', '>= 1.3.0'
 
+# テンプレートエンジンに slim を使用する
+gem 'slim-rails'
+
 # Assets と View で CoffeeScript を使用する
 gem 'coffee-rails', '~> 4.1.0'
 
