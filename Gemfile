@@ -33,6 +33,9 @@ gem 'turbolinks'
 gem 'annotate'
 
 group :development do
+  # コーディングルールの準拠チェックを実施する
+  gem 'rubocop'
+
   # n + 1 問題を検出する
   gem 'bullet'
 
