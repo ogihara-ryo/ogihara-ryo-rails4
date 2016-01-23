@@ -36,6 +36,9 @@ group :development do
   # コーディングルールの準拠チェックを実施する
   gem 'rubocop'
 
+  # ファイルの保存時に自動で rubocop を実行する
+  gem 'guard-rubocop'
+
   # n + 1 問題を検出する
   gem 'bullet'
 
@@ -58,4 +61,10 @@ group :development, :test do
 
   # binding.pry コールした場所がブレークポイントとなる
   gem 'pry-byebug'
+
+  # ファイルシステムの変更イベントを監視する
+  gem 'guard'
+
+  # Guard に OS の通知センターを利用させる
+  gem 'terminal-notifier-guard'
 end
