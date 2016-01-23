@@ -17,6 +17,7 @@ rake db:migrate
 
 ## デプロイ
 master ブランチを変更すると、wercker により自動でデプロイされます。
+
 [http://ogihara-ryo.herokuapp.com](http://ogihara-ryo.herokuapp.com)
 
 ## ライセンス
