@@ -31,11 +31,13 @@ build:
 
 deploy:
   steps:
-    - heroku-deploy
+    - heroku-deploy:
+      install-toolbelt: true
+      key-name: $HEROKU_SSH_KEY
 
     - script:
       name: Update database
-      code: heroku run rake db:migrate --app $APP_NAME
+      code: heroku run rake db:migrate --app $HEROKU_APP_NAME
 
   after-steps:
     - wantedly/pretty-slack-notify:
