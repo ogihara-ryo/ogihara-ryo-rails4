@@ -10,6 +10,10 @@ Rails:
 Style/AsciiComments:
   Enabled: false
 
+# Do not use block comments.
+Style/BlockComments:
+  Enabled: false
+
 # Missing top-level class documentation comment.
 Style/Documentation:
   Enabled: false
