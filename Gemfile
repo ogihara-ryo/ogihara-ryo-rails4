@@ -48,7 +48,7 @@ group :development do
   # アセットパイプラインのログを表示しない
   gem 'quiet_assets'
 
-   # アプリケーションプリローダー
+  # アプリケーションプリローダー
   gem 'spring'
 end
 
