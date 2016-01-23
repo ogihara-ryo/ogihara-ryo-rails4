@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+
+Rails:
+  Enabled: true
+
+# Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
+
+# Missing top-level class documentation comment.
+Style/Documentation:
+  Enabled: false
+
+# Line is too long.
+Metrics/LineLength:
+  Max: 128
