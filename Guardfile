@@ -3,7 +3,7 @@ guard :rubocop, notification: true do
   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end
 
-guard :rspec, after_all_pass: false, cmd: 'spring rspec' do
+guard :rspec, after_all_pass: false, cmd: 'rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
