@@ -12,4 +12,8 @@
 !/log/.keep
 /tmp
 
+# database.yml.example だけリポジトリに置く
+config/database.yml
+
+# simplecov
 coverage
