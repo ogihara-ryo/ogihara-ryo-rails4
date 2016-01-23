@@ -21,7 +21,7 @@ gem 'slim-rails'
 gem 'coffee-rails', '~> 4.1.0'
 
 # JavaScript のエンジン V8 を Ruby から利用する
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # JavaScript のライブラリ jQuery を使用する
 gem 'jquery-rails'
