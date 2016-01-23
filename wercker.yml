@@ -1,16 +1,23 @@
 box: ruby:2.3.0
+
 services:
-  - wercker/postgresql
+  - id: postgres
+    env:
+      POSTGRES_PASSWORD: secret_password
+
 build:
   steps:
     - bundle-install
+
     - rails-database-yml:
-      service: postgresql
+      service: postgresql-docker
+
     - script:
       name: Set up DB
       code: |-
         bundle exec rake db:create
         bundle exec rake db:schema:load
+
     - script:
       name: Run rspecs
       code: bundle exec rspec
@@ -18,6 +25,7 @@ build:
 deploy:
   steps:
     - heroku-deploy
+
     - script:
       name: Update database
       code: heroku run rake db:migrate --app $APP_NAME
