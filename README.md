@@ -15,7 +15,8 @@ rake db:migrate
 ## 仕様
 [https://github.com/ogihara-ryo/ogihara-ryo/wiki/設計思想メモ](https://github.com/ogihara-ryo/ogihara-ryo/wiki/設計思想メモ)
 
-## デプロイ先
+## デプロイ
+master ブランチを変更すると、wercker により自動でデプロイされます。
 [http://ogihara-ryo.herokuapp.com](http://ogihara-ryo.herokuapp.com)
 
 ## ライセンス
