@@ -50,9 +50,6 @@ group :development do
 
   # アセットパイプラインのログを表示しない
   gem 'quiet_assets'
-
-  # アプリケーションプリローダー
-  gem 'spring'
 end
 
 group :development, :test do
@@ -62,9 +59,35 @@ group :development, :test do
   # binding.pry コールした場所がブレークポイントとなる
   gem 'pry-byebug'
 
+  # ファイルの保存時に自動で rspec を実行する
+  gem 'guard-rspec'
+
   # ファイルシステムの変更イベントを監視する
   gem 'guard'
 
   # Guard に OS の通知センターを利用させる
   gem 'terminal-notifier-guard'
+
+  # アプリケーションプリローダー
+  gem 'spring'
+
+  # RSpec を Spring 上で起動する
+  gem 'spring-commands-rspec'
+
+  # テストフレームワーク
+  gem 'rspec-rails'
+end
+
+group :test do
+  # ユーザーとアプリケーションのやり取りをシミュレートする(フィーチャーテスト)
+  gem 'capybara'
+
+  # RSpec でのテストを強力にサポートしてくれるマッチャー集
+  gem 'shoulda-matchers', require: false
+
+  # コードのカバレッジを計測する
+  gem 'simplecov', require: false
+
+  # テスト時にデータベースを綺麗にする
+  gem 'database_cleaner'
 end
