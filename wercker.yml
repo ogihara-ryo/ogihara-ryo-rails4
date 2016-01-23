@@ -33,7 +33,7 @@ deploy:
   steps:
     - heroku-deploy:
       install-toolbelt: true
-      key-name: $HEROKU_SSH_KEY
+      key-name: HEROKU_SSH_KEY
 
     - script:
       name: Update database
