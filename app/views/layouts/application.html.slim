@@ -4,9 +4,11 @@ html
     == render 'head'
 
   body
-    == render 'header'
+    header
+      == render 'header'
 
     article
       == yield
 
-    == render 'footer'
+    footer
+      == render 'footer'
