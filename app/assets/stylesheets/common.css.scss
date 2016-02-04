@@ -1,4 +1,17 @@
+$font_color: #333333;
+$link_hover_color: #e01090;
+
 article {
   width: 1024px;
   margin: 0 auto;
+}
+
+a {
+  color: $font_color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link_hover_color;
+    text-decoration: underline;
+  }
 }
