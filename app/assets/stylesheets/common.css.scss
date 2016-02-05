@@ -1,6 +1,17 @@
 $font_color: #333333;
 $link_hover_color: #e01090;
 
+@import url('//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
+body {
+  font-family:
+    'ヒラギノ明朝 ProN W3',
+    'Hiragino Mincho ProN',
+    'HG明朝E',
+    'ＭＳ Ｐ明朝',
+    'ＭＳ 明朝',
+    serif;
+}
+
 a {
   color: $font_color;
   text-decoration: none;
