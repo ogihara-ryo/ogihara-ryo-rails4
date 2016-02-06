@@ -2,6 +2,7 @@
 #
 #         Prefix Verb   URI Pattern               Controller#Action
 #           root GET    /                         welcome#index
+#          admin GET    /admin(.:format)          admin/menu#index
 #  admin_sign_in GET    /admin/sign_in(.:format)  admin/session#new
 #                POST   /admin/sign_in(.:format)  admin/session#create
 # admin_sign_out DELETE /admin/sign_out(.:format) admin/session#destroy
@@ -63,5 +64,9 @@ Rails.application.routes.draw do
     post 'sign_in' => 'session#create'
     delete 'sign_out' => 'session#destroy'
     get 'menu' => 'menu#index'
+  end
+
+  scope module: :admin do
+    get 'admin' => 'menu#index'
   end
 end
