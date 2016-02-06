@@ -1,3 +1,10 @@
+# == Route Map
+#
+#     Prefix Verb URI Pattern           Controller#Action
+#       root GET  /                     welcome#index
+# admin_menu GET  /admin/menu(.:format) admin#menu
+#
+
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
