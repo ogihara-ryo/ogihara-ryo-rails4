@@ -13,5 +13,6 @@
 #
 
 class BlogCategory < ActiveRecord::Base
-  belongs_to :parent
+  belongs_to :parent, class_name: :BlogCategory, foreign_key: :parent_id
+  has_many :children, class_name: :BlogCategory, dependent: :delete_all, foreign_key: :parent_id
 end
