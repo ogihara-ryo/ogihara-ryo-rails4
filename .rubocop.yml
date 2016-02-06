@@ -14,6 +14,10 @@ Style/AsciiComments:
 Style/BlockComments:
   Enabled: false
 
+# Use nested module/class definitions instead of compact style.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 # Missing top-level class documentation comment.
 Style/Documentation:
   Enabled: false
