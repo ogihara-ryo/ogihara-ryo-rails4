@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160206180717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_categories", force: :cascade do |t|
+    t.integer  "sort_order"
+    t.string   "permalink"
+    t.string   "name"
+    t.integer  "level"
+    t.integer  "parent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "blog_categories", ["parent"], name: "index_blog_categories_on_parent", using: :btree
 
 end
