@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20160206180717) do
     t.string   "permalink"
     t.string   "name"
     t.integer  "level"
-    t.integer  "parent"
+    t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "blog_categories", ["parent"], name: "index_blog_categories_on_parent", using: :btree
+  add_index "blog_categories", ["parent_id"], name: "index_blog_categories_on_parent_id", using: :btree
 
 end
