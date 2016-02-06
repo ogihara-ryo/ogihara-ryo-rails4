@@ -30,4 +30,10 @@ RSpec.describe BlogCategory, type: :model do
     it { is_expected.to have_many(:children) }
     it { is_expected.to belong_to(:parent) }
   end
+
+  describe 'スコープ' do
+    it 'デフォルトの並び順が sort_order の昇順であること' do
+      expect(BlogCategory.all.to_sql).to eq BlogCategory.unscoped.order(:sort_order).to_sql
+    end
+  end
 end
