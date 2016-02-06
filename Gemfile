@@ -76,6 +76,9 @@ group :development, :test do
 
   # テストフレームワーク
   gem 'rspec-rails'
+
+  # /.env に環境変数を定義する
+  gem 'dotenv-rails'
 end
 
 group :test do
