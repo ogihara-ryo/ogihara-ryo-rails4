@@ -1,8 +1,11 @@
 # == Route Map
 #
-#     Prefix Verb URI Pattern           Controller#Action
-#       root GET  /                     welcome#index
-# admin_menu GET  /admin/menu(.:format) admin#menu
+#         Prefix Verb   URI Pattern               Controller#Action
+#           root GET    /                         welcome#index
+#  admin_sign_in GET    /admin/sign_in(.:format)  admin/session#new
+#                POST   /admin/sign_in(.:format)  admin/session#create
+# admin_sign_out DELETE /admin/sign_out(.:format) admin/session#destroy
+#     admin_menu GET    /admin/menu(.:format)     admin/menu#index
 #
 
 Rails.application.routes.draw do
