@@ -7,7 +7,7 @@
 #  permalink  :string
 #  name       :string
 #  level      :integer
-#  parent     :integer
+#  parent_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
