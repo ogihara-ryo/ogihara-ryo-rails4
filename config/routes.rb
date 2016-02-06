@@ -59,6 +59,6 @@ Rails.application.routes.draw do
     get 'sign_in' => 'session#new'
     post 'sign_in' => 'session#create'
     delete 'sign_out' => 'session#destroy'
-    get 'menu'
+    get 'menu' => 'menu#index'
   end
 end
