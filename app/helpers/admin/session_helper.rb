@@ -1,13 +1,13 @@
 module Admin::SessionHelper
   def sign_in
-    session[:login] = true
+    session[:signed_in] = true
   end
 
   def signed_in?
-    session[:login].present?
+    session[:signed_in].present?
   end
 
   def sign_out
-    session[:login] = nil
+    session[:signed_in] = nil
   end
 end

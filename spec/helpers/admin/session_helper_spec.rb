@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Admin::SessionHelper do
   describe '#sign_in' do
     before do
-      session[:login] = nil
+      session[:signed_in] = nil
       sign_in
     end
 
-    it { expect(session[:login]).to be_truthy }
+    it { expect(session[:signed_in]).to be_truthy }
   end
 
   describe '#signed_in?' do
@@ -19,7 +19,7 @@ RSpec.describe Admin::SessionHelper do
     end
 
     context 'サインイン中でない場合' do
-      before { session[:login] = nil }
+      before { session[:signed_in] = nil }
       it { is_expected.to be_falsey }
     end
   end
@@ -30,6 +30,6 @@ RSpec.describe Admin::SessionHelper do
       sign_out
     end
 
-    it { expect(session[:login]).to be_nil }
+    it { expect(session[:signed_in]).to be_nil }
   end
 end
