@@ -21,4 +21,6 @@
 
 ja:
   admin:
+    sign_in: サインイン
+    sign_out: サインアウト
     menu: 管理者メニュー
