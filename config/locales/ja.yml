@@ -20,4 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "Hello world"
+  admin:
+    menu: 管理者メニュー
