@@ -56,6 +56,9 @@ Rails.application.routes.draw do
 
   # Example resource route within a namespace:
   namespace :admin do
+    get 'sign_in' => 'session#new'
+    post 'sign_in' => 'session#create'
+    delete 'sign_out' => 'session#destroy'
     get 'menu'
   end
 end

@@ -10,6 +10,16 @@ RSpec.describe Admin::SessionHelper do
     it { expect(session[:signed_in]).to be_truthy }
   end
 
+  describe '#authenticated?' do
+    context 'パスワードが正しい場合' do
+      it { expect(authenticated?(ENV['ADMIN_PASSWORD'])).to be_truthy }
+    end
+
+    context 'パスワードが誤っている場合' do
+      it { expect(authenticated?('invalid_password')).to be_falsey }
+    end
+  end
+
   describe '#signed_in?' do
     subject { signed_in? }
 
