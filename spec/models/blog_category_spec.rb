@@ -32,8 +32,14 @@ RSpec.describe BlogCategory, type: :model do
   end
 
   describe 'スコープ' do
-    it 'デフォルトの並び順が sort_order の昇順であること' do
-      expect(BlogCategory.all.to_sql).to eq BlogCategory.unscoped.order(:sort_order).to_sql
+    describe 'default_scope' do
+      it 'デフォルトの並び順が sort_order の昇順であること' do
+        expect(BlogCategory.all.to_sql).to eq BlogCategory.unscoped.order(:sort_order).to_sql
+      end
+    end
+
+    describe '.root' do
+      it { expect(BlogCategory.roots.to_sql).to eq BlogCategory.where(level: 1).to_sql }
     end
   end
 end

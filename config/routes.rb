@@ -64,6 +64,7 @@ Rails.application.routes.draw do
     post 'sign_in' => 'session#create'
     delete 'sign_out' => 'session#destroy'
     get 'menu' => 'menu#index'
+    resources 'blog_categories'
   end
 
   scope module: :admin do

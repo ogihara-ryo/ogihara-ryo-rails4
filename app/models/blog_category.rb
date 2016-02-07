@@ -17,4 +17,5 @@ class BlogCategory < ActiveRecord::Base
   has_many :children, class_name: :BlogCategory, dependent: :delete_all, foreign_key: :parent_id
 
   default_scope { order(:sort_order) }
+  scope :roots, -> { where(level: 1) }
 end
