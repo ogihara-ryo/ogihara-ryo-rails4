@@ -1,18 +1,15 @@
 module Admin::BlogCategoriesHelper
   def render_blog_categories_hierarchy(blog_categories)
-    if blog_categories.count > 0
-      html = '<ul>'
-      blog_categories.each do |blog_category|
-        html += '<li>'
-        html += link_to blog_category.name, admin_blog_category_path(blog_category)
-        html += '</li>'
-        child_blog_categories = BlogCategory.where(parent: blog_category)
-        if child_blog_categories.count > 0
-          html += render_blog_categories_hierarchy(child_blog_categories)
-        end
-      end
-      html += '</ul>'
-    end
-    html.html_safe
+    return nil unless blog_categories.count > 0
+    content_tag :ul do
+      blog_categories.map { |blog_category| render_blog_categories_children(blog_category) }.join.html_safe
+    end.html_safe
+  end
+
+  private
+
+  def render_blog_categories_children(blog_category)
+    content_tag(:li, link_to(blog_category.name, admin_blog_category_path(blog_category)))
+      .concat(render_blog_categories_hierarchy(BlogCategory.where(parent: blog_category)))
   end
 end
