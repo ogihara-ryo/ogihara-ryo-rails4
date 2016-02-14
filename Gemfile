@@ -88,6 +88,9 @@ group :test do
   # RSpec でのテストを強力にサポートしてくれるマッチャー集
   gem 'shoulda-matchers', require: false
 
+  # テストに用いるデータを定義
+  gem 'factory_girl_rails'
+
   # コードのカバレッジを計測する
   gem 'simplecov', require: false
 
