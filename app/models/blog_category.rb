@@ -6,7 +6,6 @@
 #  sort_order :integer
 #  permalink  :string
 #  name       :string
-#  level      :integer
 #  parent_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -17,5 +16,5 @@ class BlogCategory < ActiveRecord::Base
   has_many :children, class_name: :BlogCategory, dependent: :delete_all, foreign_key: :parent_id
 
   default_scope { order(:sort_order) }
-  scope :roots, -> { where(level: 1) }
+  scope :roots, -> { where(parent: nil) }
 end

@@ -6,7 +6,6 @@
 #  sort_order :integer
 #  permalink  :string
 #  name       :string
-#  level      :integer
 #  parent_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,7 +19,6 @@ RSpec.describe BlogCategory, type: :model do
     it { is_expected.to respond_to(:sort_order) }
     it { is_expected.to respond_to(:permalink) }
     it { is_expected.to respond_to(:name) }
-    it { is_expected.to respond_to(:level) }
     it { is_expected.to respond_to(:parent_id) }
     it { is_expected.to respond_to(:created_at) }
     it { is_expected.to respond_to(:updated_at) }
@@ -39,7 +37,7 @@ RSpec.describe BlogCategory, type: :model do
     end
 
     describe '.root' do
-      it { expect(BlogCategory.roots.to_sql).to eq BlogCategory.where(level: 1).to_sql }
+      it { expect(BlogCategory.roots.to_sql).to eq BlogCategory.where(parent: nil).to_sql }
     end
   end
 end

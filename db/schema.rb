@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160206180717) do
     t.integer  "sort_order"
     t.string   "permalink"
     t.string   "name"
-    t.integer  "level"
     t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
