@@ -40,4 +40,19 @@ RSpec.describe BlogCategory, type: :model do
       it { expect(BlogCategory.roots.to_sql).to eq BlogCategory.where(parent: nil).to_sql }
     end
   end
+
+  describe 'インスタンスメソッド' do
+    describe '.level' do
+      before do
+        @blog_categories = create_list(:blog_category, 3)
+        @blog_categories.first.parent = nil
+        @blog_categories.second.parent = @blog_categories.first
+        @blog_categories.third.parent = @blog_categories.second
+      end
+
+      it { expect(@blog_categories.first.level).to eq 1 }
+      it { expect(@blog_categories.second.level).to eq 2 }
+      it { expect(@blog_categories.third.level).to eq 3 }
+    end
+  end
 end

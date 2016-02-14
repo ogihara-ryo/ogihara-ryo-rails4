@@ -17,4 +17,13 @@ class BlogCategory < ActiveRecord::Base
 
   default_scope { order(:sort_order) }
   scope :roots, -> { where(parent: nil) }
+
+  def level
+    # お互いに parent を設定していると無限ループになる
+    target = self
+    loop.each.with_index(1) do |_, n|
+      return n if target.parent.blank?
+      target = target.parent
+    end
+  end
 end
