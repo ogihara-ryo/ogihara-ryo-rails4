@@ -63,6 +63,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.include FactoryGirl::Syntax::Methods
   config.include SessionHelpers
 
   # database_cleaner
