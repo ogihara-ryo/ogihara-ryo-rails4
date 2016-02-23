@@ -1,0 +1,14 @@
+h1 = @blog_category.name
+
+dl
+  dt = t('activerecord.attributes.blog_category.sort_order')
+  dd = @blog_category.sort_order
+
+  dt = t('activerecord.attributes.blog_category.permalink')
+  dd = @blog_category.permalink
+
+  dt = t('activerecord.attributes.blog_category.name')
+  dd = @blog_category.name
+
+  dt = t('activerecord.attributes.blog_category.parent')
+  dd = @blog_category.parent.present? ? @blog_category.parent.name : t('text_none_parent')

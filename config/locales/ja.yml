@@ -20,7 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  text_none_parent: なし
+
   admin:
     sign_in: サインイン
     sign_out: サインアウト
     menu: 管理者メニュー
+
+  activerecord:
+    attributes:
+      blog_category:
+        sort_order: 並び順
+        permalink: パーマリンク
+        name: 名称
+        parent: 親カテゴリー
