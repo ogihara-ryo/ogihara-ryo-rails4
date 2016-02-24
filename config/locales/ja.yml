@@ -28,6 +28,9 @@ ja:
     menu: 管理者メニュー
 
   activerecord:
+    models:
+      blog_category: ブログカテゴリー
+
     attributes:
       blog_category:
         sort_order: 並び順
