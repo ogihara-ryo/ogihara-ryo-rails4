@@ -1,5 +1,6 @@
 class Admin::BlogCategoriesController < Admin::SessionController
   before_action :set_blog_category, only: :show
+  before_action :signin_required
 
   def index
   end
