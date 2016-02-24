@@ -11,4 +11,4 @@ dl
   dd = @blog_category.name
 
   dt = t('activerecord.attributes.blog_category.parent')
-  dd = @blog_category.parent.present? ? @blog_category.parent.name : t('text_none_parent')
+  dd = link_to_blog_category

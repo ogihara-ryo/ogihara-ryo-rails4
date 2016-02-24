@@ -8,6 +8,14 @@ module Admin::BlogCategoriesHelper
     end.html_safe
   end
 
+  def link_to_blog_category
+    if @blog_category.parent.present?
+      link_to @blog_category.parent.name, admin_blog_category_path(@blog_category.parent)
+    else
+      t('text_none_parent')
+    end
+  end
+
   private
 
   def render_blog_categories_children(blog_category)
