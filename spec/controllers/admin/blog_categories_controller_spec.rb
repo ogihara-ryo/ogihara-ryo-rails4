@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Admin::BlogCategoriesController, type: :controller do
+  before { sign_in }
   subject { response }
 
   describe 'GET #index' do
