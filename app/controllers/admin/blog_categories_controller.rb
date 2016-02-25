@@ -8,6 +8,10 @@ class Admin::BlogCategoriesController < Admin::SessionController
   def show
   end
 
+  def new
+    @blog_category = BlogCategory.new
+  end
+
   private
 
   def set_blog_category
