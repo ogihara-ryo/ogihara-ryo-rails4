@@ -13,4 +13,26 @@ RSpec.describe Admin::BlogCategoriesHelper do
 
     it { is_expected.not_to eq be_nil }
   end
+
+  describe '#link_to_parent_blog_category' do
+    subject { link_to_parent_blog_category }
+
+    context '親カテゴリーがある場合' do
+      before do
+        @parent_blog_category = create(:blog_category, parent: nil)
+        @child_blog_category = create(:blog_category, parent: @parent_blog_category)
+      end
+      it '親カテゴリーの Show ページへのリンクを返すこと' do
+        expect(link_to_parent_blog_category(@child_blog_category))
+          .to eq link_to(@parent_blog_category.name, admin_blog_category_path(@parent_blog_category))
+      end
+    end
+
+    context '親カテゴリーがない場合' do
+      before do
+        @blog_category = create(:blog_category, parent: nil)
+      end
+      it { expect(link_to_parent_blog_category(@blog_category)).to eq I18n.t('text_none_parent') }
+    end
+  end
 end
