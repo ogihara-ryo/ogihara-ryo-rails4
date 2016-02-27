@@ -25,3 +25,8 @@ Style/Documentation:
 # Line is too long.
 Metrics/LineLength:
   Max: 128
+
+# Avoid using {...} for multi-line blocks.
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
