@@ -8,7 +8,7 @@ module Admin::BlogCategoriesHelper
     end.html_safe
   end
 
-  def link_to_blog_category
+  def link_to_parent_blog_category
     if @blog_category.parent.present?
       link_to @blog_category.parent.name, admin_blog_category_path(@blog_category.parent)
     else
