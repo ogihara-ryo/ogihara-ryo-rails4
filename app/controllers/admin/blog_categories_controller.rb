@@ -1,5 +1,5 @@
 class Admin::BlogCategoriesController < Admin::SessionController
-  before_action :set_blog_category, only: %i(show edit)
+  before_action :set_blog_category, only: %i(show edit update)
   before_action :signin_required
 
   def index
@@ -22,6 +22,14 @@ class Admin::BlogCategoriesController < Admin::SessionController
   end
 
   def edit
+  end
+
+  def update
+    if @blog_category.update(blog_category_params)
+      redirect_to admin_blog_category_path(@blog_category)
+    else
+      render :edit
+    end
   end
 
   private
