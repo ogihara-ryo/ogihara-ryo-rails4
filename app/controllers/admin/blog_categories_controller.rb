@@ -1,5 +1,5 @@
 class Admin::BlogCategoriesController < Admin::SessionController
-  before_action :set_blog_category, only: %i(show edit update)
+  before_action :set_blog_category, only: %i(show edit update destroy)
   before_action :signin_required
 
   def index
@@ -30,6 +30,11 @@ class Admin::BlogCategoriesController < Admin::SessionController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @blog_category.destroy
+    redirect_to admin_blog_categories_path
   end
 
   private

@@ -69,4 +69,14 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    before { @blog_category = create(:blog_category) }
+    it 'BlogCategory インスタンスが1つ削除され、Index ページへリダイレクトされること' do
+      expect {
+        delete :destroy, id: @blog_category
+      }.to change(BlogCategory, :count).by(-1)
+      expect(response).to redirect_to admin_blog_categories_path
+    end
+  end
 end
