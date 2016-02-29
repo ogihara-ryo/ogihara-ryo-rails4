@@ -29,6 +29,12 @@ RSpec.describe BlogCategory, type: :model do
     it { is_expected.to belong_to(:parent) }
   end
 
+  describe 'バリデーション' do
+    it { is_expected.to validate_presence_of(:sort_order) }
+    it { is_expected.to validate_presence_of(:permalink) }
+    it { is_expected.to validate_presence_of(:name) }
+  end
+
   describe 'スコープ' do
     describe 'default_scope' do
       it 'デフォルトの並び順が sort_order の昇順であること' do
