@@ -33,6 +33,15 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
         expect(response).to redirect_to admin_blog_category_path(assigns[:blog_category])
       end
     end
+
+    context '失敗の場合' do
+      it 'BlogCategory インスタンスが作成されず、new テンプレートをレンダリングすること' do
+        expect {
+          post :create, blog_category: attributes_for(:blog_category, permalink: nil)
+        }.to change(BlogCategory, :count).by(0)
+        expect(response).to render_template(:new)
+      end
+    end
   end
 
   describe 'GET #edit' do
@@ -67,6 +76,11 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
         expect(subject.parent_id).to eq @parent.id
         expect(response).to redirect_to admin_blog_category_path(assigns[:blog_category])
       end
+    end
+
+    context '失敗の場合' do
+      before { patch :update, id: @blog_category, blog_category: attributes_for(:blog_category, permalink: nil) }
+      it { is_expected.to render_template(:edit) }
     end
   end
 
