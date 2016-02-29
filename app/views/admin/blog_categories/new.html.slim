@@ -1,7 +1,1 @@
-= form_for [:admin, @blog_category] do |f|
-  = f.number_field :sort_order, placeholder: t('activerecord.attributes.blog_category.sort_order')
-  = f.text_field :permalink, placeholder: t('activerecord.attributes.blog_category.permalink')
-  = f.text_field :name, placeholder: t('activerecord.attributes.blog_category.name')
-  = f.collection_select :parent_id, BlogCategory.all, :id, :name, include_blank: true
-
-  = f.submit
+== render 'form'
