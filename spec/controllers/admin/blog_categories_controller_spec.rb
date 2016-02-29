@@ -34,4 +34,13 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
       end
     end
   end
+
+  describe 'GET #edit' do
+    before do
+      @blog_category = create(:blog_category)
+      get :edit, id: @blog_category.id
+    end
+    it { is_expected.to have_http_status(:success) }
+    it { expect(assigns(:blog_category)).to eq @blog_category }
+  end
 end

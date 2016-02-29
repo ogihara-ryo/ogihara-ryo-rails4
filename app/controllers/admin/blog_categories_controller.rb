@@ -1,5 +1,5 @@
 class Admin::BlogCategoriesController < Admin::SessionController
-  before_action :set_blog_category, only: :show
+  before_action :set_blog_category, only: %i(show edit)
   before_action :signin_required
 
   def index
@@ -19,6 +19,9 @@ class Admin::BlogCategoriesController < Admin::SessionController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   private
