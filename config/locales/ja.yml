@@ -23,6 +23,9 @@ ja:
   text_none_parent: なし
   text_new: 新規作成
 
+  button:
+    submit: 確定
+
   admin:
     sign_in: サインイン
     sign_out: サインアウト
