@@ -5,6 +5,7 @@ class Admin::SessionController < ApplicationController
   skip_before_action :signin_required
 
   def new
+    redirect_to admin_menu_path if signed_in?
   end
 
   def create

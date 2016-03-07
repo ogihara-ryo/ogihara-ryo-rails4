@@ -4,8 +4,21 @@ RSpec.describe Admin::SessionController, type: :controller do
   subject { response }
 
   describe 'GET #new' do
-    before { get :new }
-    it { is_expected.to have_http_status(:success) }
+    context 'サインインしていない場合' do
+      before do
+        sign_out
+        get :new
+      end
+      it { is_expected.to have_http_status(:success) }
+    end
+
+    context 'サインイン済みの場合' do
+      before do
+        sign_in
+        get :new
+      end
+      it { is_expected.to redirect_to admin_menu_path }
+    end
   end
 
   describe 'POST #create' do
