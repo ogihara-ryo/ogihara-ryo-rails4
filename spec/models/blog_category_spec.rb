@@ -27,6 +27,7 @@ RSpec.describe BlogCategory, type: :model do
   describe 'アソシエーション' do
     it { is_expected.to have_many(:children) }
     it { is_expected.to belong_to(:parent) }
+    it { is_expected.to have_many(:blogs) }
   end
 
   describe 'バリデーション' do

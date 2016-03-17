@@ -13,5 +13,16 @@
 require 'rails_helper'
 
 RSpec.describe Blog, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'メンバー定義' do
+    it { is_expected.to respond_to(:id) }
+    it { is_expected.to respond_to(:title) }
+    it { is_expected.to respond_to(:content) }
+    it { is_expected.to respond_to(:category_id) }
+    it { is_expected.to respond_to(:created_at) }
+    it { is_expected.to respond_to(:updated_at) }
+  end
+
+  describe 'アソシエーション' do
+    it { is_expected.to belong_to(:category) }
+  end
 end
