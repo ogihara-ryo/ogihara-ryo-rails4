@@ -12,4 +12,5 @@
 
 class Blog < ActiveRecord::Base
   belongs_to :category, class_name: :BlogCategory
+  validates :title, presence: true
 end

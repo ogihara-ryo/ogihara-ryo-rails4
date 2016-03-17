@@ -25,4 +25,8 @@ RSpec.describe Blog, type: :model do
   describe 'アソシエーション' do
     it { is_expected.to belong_to(:category) }
   end
+
+  describe 'バリデーション' do
+    it { is_expected.to validate_presence_of(:title) }
+  end
 end
