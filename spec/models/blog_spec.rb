@@ -6,6 +6,7 @@
 #  title       :string
 #  content     :text
 #  category_id :integer
+#  draft       :boolean          default(TRUE), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -18,6 +19,7 @@ RSpec.describe Blog, type: :model do
     it { is_expected.to respond_to(:title) }
     it { is_expected.to respond_to(:content) }
     it { is_expected.to respond_to(:category_id) }
+    it { is_expected.to respond_to(:draft) }
     it { is_expected.to respond_to(:created_at) }
     it { is_expected.to respond_to(:updated_at) }
   end

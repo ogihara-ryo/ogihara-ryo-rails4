@@ -6,6 +6,7 @@
 #  title       :string
 #  content     :text
 #  category_id :integer
+#  draft       :boolean          default(TRUE), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
