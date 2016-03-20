@@ -14,6 +14,14 @@
 #                          PATCH  /admin/blog_categories/:id(.:format)      admin/blog_categories#update
 #                          PUT    /admin/blog_categories/:id(.:format)      admin/blog_categories#update
 #                          DELETE /admin/blog_categories/:id(.:format)      admin/blog_categories#destroy
+#              admin_blogs GET    /admin/blogs(.:format)                    admin/blogs#index
+#                          POST   /admin/blogs(.:format)                    admin/blogs#create
+#           new_admin_blog GET    /admin/blogs/new(.:format)                admin/blogs#new
+#          edit_admin_blog GET    /admin/blogs/:id/edit(.:format)           admin/blogs#edit
+#               admin_blog GET    /admin/blogs/:id(.:format)                admin/blogs#show
+#                          PATCH  /admin/blogs/:id(.:format)                admin/blogs#update
+#                          PUT    /admin/blogs/:id(.:format)                admin/blogs#update
+#                          DELETE /admin/blogs/:id(.:format)                admin/blogs#destroy
 #                    admin GET    /admin(.:format)                          admin/menu#index
 #
 
@@ -73,6 +81,7 @@ Rails.application.routes.draw do
     delete 'sign_out' => 'session#destroy'
     get 'menu' => 'menu#index'
     resources 'blog_categories'
+    resources 'blogs'
   end
 
   scope module: :admin do
