@@ -26,7 +26,7 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
 
   describe 'POST #create' do
     context '成功の場合' do
-      it 'BlogCategory インスタンスが1つ作成され、Show ページへリダイレクトされること' do
+      it 'インスタンスが1つ作成され、Show ページへリダイレクトされること' do
         expect {
           post :create, blog_category: attributes_for(:blog_category)
         }.to change(BlogCategory, :count)
@@ -35,7 +35,7 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
     end
 
     context '失敗の場合' do
-      it 'BlogCategory インスタンスが作成されず、new テンプレートをレンダリングすること' do
+      it 'インスタンスが作成されず、new テンプレートをレンダリングすること' do
         expect {
           post :create, blog_category: attributes_for(:blog_category, permalink: nil)
         }.to change(BlogCategory, :count).by(0)
@@ -86,7 +86,7 @@ RSpec.describe Admin::BlogCategoriesController, type: :controller do
 
   describe 'DELETE #destroy' do
     before { @blog_category = create(:blog_category) }
-    it 'BlogCategory インスタンスが1つ削除され、Index ページへリダイレクトされること' do
+    it 'インスタンスが1つ削除され、Index ページへリダイレクトされること' do
       expect {
         delete :destroy, id: @blog_category
       }.to change(BlogCategory, :count).by(-1)
