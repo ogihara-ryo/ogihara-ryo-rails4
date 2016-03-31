@@ -8,6 +8,10 @@ class Admin::BlogsController < ApplicationController
   def show
   end
 
+  def new
+    @blog = Blog.new
+  end
+
   private
 
   def set_blog

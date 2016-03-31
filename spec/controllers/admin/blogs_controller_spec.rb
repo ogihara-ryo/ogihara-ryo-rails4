@@ -17,4 +17,10 @@ RSpec.describe Admin::BlogsController, type: :controller do
     it { is_expected.to have_http_status(:success) }
     it { expect(assigns(:blog)).to eq @blog }
   end
+
+  describe 'GET #new' do
+    before { get :new }
+    it { is_expected.to have_http_status(:success) }
+    it { expect(assigns(:blog).new_record?).to be_truthy }
+  end
 end
