@@ -1,5 +1,5 @@
 class Admin::BlogsController < ApplicationController
-  before_action :set_blog, only: %i(show)
+  before_action :set_blog, only: %i(show edit)
 
   def index
     @blogs = Blog.all
@@ -19,6 +19,9 @@ class Admin::BlogsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   private
