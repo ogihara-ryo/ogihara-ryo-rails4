@@ -52,4 +52,35 @@ RSpec.describe Admin::BlogsController, type: :controller do
     it { is_expected.to have_http_status(:success) }
     it { expect(assigns(:blog)).to eq @blog }
   end
+
+  describe 'POST #update' do
+    before do
+      @blog_category1, @blog_category2 = create_list(:blog_category, 2)
+      @blog = create(:blog, category: @blog_category1)
+    end
+    context '成功の場合' do
+      before do
+        patch :update, id: @blog, blog: attributes_for(
+          :blog,
+          title: 'update_title',
+          content: 'update_content',
+          category_id: @blog_category2.id,
+          draft: true
+        )
+      end
+      subject { @blog.reload }
+      it '各属性が更新され、Show ページへリダイレクトされること' do
+        expect(subject.title).to eq 'update_title'
+        expect(subject.content).to eq 'update_content'
+        expect(subject.category_id).to eq @blog_category2.id
+        expect(subject.draft).to eq true
+        expect(response).to redirect_to admin_blog_path(assigns[:blog])
+      end
+    end
+
+    context '失敗の場合' do
+      before { patch :update, id: @blog, blog: attributes_for(:blog, title: nil) }
+      it { is_expected.to render_template(:edit) }
+    end
+  end
 end
