@@ -1,5 +1,5 @@
 class Admin::BlogsController < ApplicationController
-  before_action :set_blog, only: %i(show edit update)
+  before_action :set_blog, only: %i(show edit update destroy)
 
   def index
     @blogs = Blog.all
@@ -30,6 +30,11 @@ class Admin::BlogsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @blog.destroy
+    redirect_to admin_blogs_path
   end
 
   private

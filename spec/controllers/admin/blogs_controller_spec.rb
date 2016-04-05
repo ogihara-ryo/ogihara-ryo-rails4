@@ -83,4 +83,14 @@ RSpec.describe Admin::BlogsController, type: :controller do
       it { is_expected.to render_template(:edit) }
     end
   end
+
+  describe 'DELETE #destroy' do
+    before { @blog = create(:blog) }
+    it 'インスタンスが1つ削除され、Index ページへリダイレクトされること' do
+      expect {
+        delete :destroy, id: @blog
+      }.to change(Blog, :count).by(-1)
+      expect(response).to redirect_to admin_blogs_path
+    end
+  end
 end
