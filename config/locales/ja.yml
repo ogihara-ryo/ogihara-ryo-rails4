@@ -34,6 +34,7 @@ ja:
   activerecord:
     models:
       blog_category: ブログカテゴリー
+      blog: ブログ
 
     attributes:
       blog_category:

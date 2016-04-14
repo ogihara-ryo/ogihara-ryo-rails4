@@ -2,5 +2,6 @@ h1 = t('admin.menu')
 
 ul
   li = link_to t('activerecord.models.blog_category'), admin_blog_categories_path
+  li = link_to t('activerecord.models.blog'), admin_blogs_path
 
 = link_to t('admin.sign_out'), admin_sign_out_path, method: :delete
