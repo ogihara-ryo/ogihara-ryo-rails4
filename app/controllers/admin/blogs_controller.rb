@@ -2,7 +2,7 @@ class Admin::BlogsController < ApplicationController
   before_action :set_blog, only: %i(show edit update destroy)
 
   def index
-    @blogs = Blog.all
+    @blog_categories = BlogCategory.includes(:blogs)
   end
 
   def show
