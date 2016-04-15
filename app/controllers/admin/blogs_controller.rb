@@ -1,5 +1,6 @@
-class Admin::BlogsController < ApplicationController
+class Admin::BlogsController < Admin::SessionController
   before_action :set_blog, only: %i(show edit update destroy)
+  before_action :signin_required
 
   def index
     @blog_categories = BlogCategory.includes(:blogs)
