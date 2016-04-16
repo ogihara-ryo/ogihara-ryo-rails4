@@ -1,5 +1,5 @@
 - @blog_categories.each do |blog_category|
-  h2 = blog_category.name
+  h2 = link_to blog_category.name, admin_blog_category_path(blog_category)
 
   - blog_category.blogs.each do |blog|
     ul
