@@ -50,16 +50,17 @@ RSpec.describe BlogCategory, type: :model do
 
   describe 'インスタンスメソッド' do
     describe '.level' do
+      let(:blog_categories) { create_list(:blog_category, 3) }
+
       before do
-        @blog_categories = create_list(:blog_category, 3)
-        @blog_categories.first.parent = nil
-        @blog_categories.second.parent = @blog_categories.first
-        @blog_categories.third.parent = @blog_categories.second
+        blog_categories.first.parent = nil
+        blog_categories.second.parent = blog_categories.first
+        blog_categories.third.parent = blog_categories.second
       end
 
-      it { expect(@blog_categories.first.level).to eq 1 }
-      it { expect(@blog_categories.second.level).to eq 2 }
-      it { expect(@blog_categories.third.level).to eq 3 }
+      it { expect(blog_categories.first.level).to eq 1 }
+      it { expect(blog_categories.second.level).to eq 2 }
+      it { expect(blog_categories.third.level).to eq 3 }
     end
   end
 end
