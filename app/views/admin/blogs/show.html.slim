@@ -1,0 +1,11 @@
+h1 = @blog.title
+
+dl
+  dt = t('activerecord.attributes.blog.category_id')
+  dd = link_to_blog_category(@blog.category)
+
+  dt = t('activerecord.attributes.blog.content')
+  dd = @blog.content
+
+  - if @blog.draft?
+    p = t('activerecord.attributes.blog.draft')
