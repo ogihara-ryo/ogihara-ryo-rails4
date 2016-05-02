@@ -14,4 +14,20 @@ RSpec.describe ApplicationHelper do
       end
     end
   end
+
+  describe '#link_to_blog_category' do
+    let(:blog_category) { create(:blog_category) }
+
+    context 'ブログカテゴリーを渡された場合' do
+      it 'ブログカテゴリーへのハイパーリンクを返すこと' do
+        expect(link_to_blog_category(blog_category)).to eq <<-"EOS".gsub!(/(\n)/, '')
+<a href=\"#{admin_blog_category_path(blog_category)}\">#{blog_category.name}</a>
+        EOS
+      end
+    end
+
+    context 'ブログカテゴリーを渡されなかった場合' do
+      it { expect(link_to_blog_category(nil)).to eq '' }
+    end
+  end
 end

@@ -6,4 +6,8 @@ module ApplicationHelper
       "#{title} | #{OgiharaRyo::Application.config.title}"
     end
   end
+
+  def link_to_blog_category(blog_category)
+    blog_category.present? ? link_to(blog_category.name, [:admin, blog_category]) : ''
+  end
 end
