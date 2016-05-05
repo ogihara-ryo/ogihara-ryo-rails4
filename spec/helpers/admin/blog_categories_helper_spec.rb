@@ -12,7 +12,15 @@ RSpec.describe Admin::BlogCategoriesHelper do
       blog_categories.third.parent = blog_categories.second
     end
 
-    it { is_expected.not_to eq be_nil }
+    it do
+      is_expected.to eq <<-'EOS'.gsub!(/(\n)/, '')
+<ul>
+<li><a href="/admin/blog_categories/1">category1</a></li>
+<li><a href="/admin/blog_categories/2">category2</a></li>
+<li><a href="/admin/blog_categories/3">category3</a></li>
+</ul>
+      EOS
+    end
   end
 
   describe '#link_to_parent_blog_category' do
