@@ -13,11 +13,11 @@ RSpec.describe Admin::BlogCategoriesHelper do
     end
 
     it do
-      is_expected.to eq <<-'EOS'.gsub!(/(\n)/, '')
+      is_expected.to eq <<-"EOS".gsub!(/(\n)/, '')
 <ul>
-<li><a href="/admin/blog_categories/1">category1</a></li>
-<li><a href="/admin/blog_categories/2">category2</a></li>
-<li><a href="/admin/blog_categories/3">category3</a></li>
+<li><a href=\"/admin/blog_categories/#{blog_categories.first.id}\">#{blog_categories.first.name}</a></li>
+<li><a href=\"/admin/blog_categories/#{blog_categories.second.id}\">#{blog_categories.second.name}</a></li>
+<li><a href=\"/admin/blog_categories/#{blog_categories.third.id}\">#{blog_categories.third.name}</a></li>
 </ul>
       EOS
     end
