@@ -2,24 +2,39 @@ require 'rails_helper'
 
 RSpec.describe Admin::BlogCategoriesHelper do
   describe '#render_blog_categories_hierarchy' do
-    subject { render_blog_categories_hierarchy(blog_categories) }
+    subject { render_blog_categories_hierarchy(blog_categories.select { |blog_category| blog_category.level == 1 }) }
 
     let(:blog_categories) { create_list(:blog_category, 3) }
 
-    before do
-      blog_categories.first.parent = nil
-      blog_categories.second.parent = blog_categories.first
-      blog_categories.third.parent = blog_categories.second
-    end
-
-    it do
-      is_expected.to eq <<-"EOS".gsub!(/(\n)/, '')
+    context '階層がない場合' do
+      it '1つの ul 要素に内包した3つの li 要素を返すこと' do
+        is_expected.to eq <<-"EOS".gsub!(/(\n)/, '')
 <ul>
 <li><a href=\"/admin/blog_categories/#{blog_categories.first.id}\">#{blog_categories.first.name}</a></li>
 <li><a href=\"/admin/blog_categories/#{blog_categories.second.id}\">#{blog_categories.second.name}</a></li>
 <li><a href=\"/admin/blog_categories/#{blog_categories.third.id}\">#{blog_categories.third.name}</a></li>
 </ul>
-      EOS
+        EOS
+      end
+    end
+
+    context '3階層の場合' do
+      before do
+        blog_categories.first.parent = nil
+        blog_categories.second.update_attributes(parent: blog_categories.first)
+        blog_categories.third.update_attributes(parent: blog_categories.second)
+      end
+
+      it 'blog_categories の階層構造と ul 要素と li 要素の階層構造が等しいこと' do
+        is_expected.to eq <<-"EOS".gsub!(/(\n)/, '')
+<ul><li><a href=\"/admin/blog_categories/#{blog_categories.first.id}\">#{blog_categories.first.name}</a></li>
+<ul><li><a href=\"/admin/blog_categories/#{blog_categories.second.id}\">#{blog_categories.second.name}</a></li>
+<ul><li><a href=\"/admin/blog_categories/#{blog_categories.third.id}\">#{blog_categories.third.name}</a></li>
+</ul>
+</ul>
+</ul>
+        EOS
+      end
     end
   end
 
