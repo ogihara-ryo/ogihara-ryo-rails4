@@ -32,6 +32,9 @@ gem 'turbolinks'
 # 'annotate' コマンドで各ファイルに schema 情報などをコメントする
 gem 'annotate'
 
+# Markdown の パーサー
+gem 'redcarpet'
+
 group :development do
   # コーディングルールの準拠チェックを実施する
   gem 'rubocop'
