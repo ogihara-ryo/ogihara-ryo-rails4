@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   scope module: :admin do
     get 'admin' => 'menu#index'
   end
+
+  resources 'blogs', only: %i(index show)
 end
