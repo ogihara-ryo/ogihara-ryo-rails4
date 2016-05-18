@@ -1,0 +1,15 @@
+= provide :title, @blog.title
+
+h1 = @blog.title
+
+dl
+  dt = t('activerecord.attributes.blog.category_id')
+  dd = link_to_blog_category(@blog.category)
+
+  dt = t('activerecord.attributes.blog.content')
+  dd = md_to_html(@blog.content, { tables: true, fenced_code_blocks: true }, { filter_html: true })
+
+  - if @blog.draft?
+    p = t('activerecord.attributes.blog.draft')
+
+= link_to t(:text_edit), edit_admin_blog_path(@blog)

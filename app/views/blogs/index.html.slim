@@ -1,0 +1,8 @@
+- @blog_categories.each do |blog_category|
+  h2 = link_to blog_category.name, admin_blog_category_path(blog_category)
+
+  - blog_category.blogs.each do |blog|
+    ul
+      li = link_to blog.title, admin_blog_path(blog)
+
+= link_to t('text_new'), new_admin_blog_path
