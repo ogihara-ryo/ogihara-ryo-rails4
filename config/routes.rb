@@ -42,4 +42,5 @@ Rails.application.routes.draw do
   end
 
   resources 'blogs', only: %i(index show)
+  resources 'blog_categories', only: %i(index show)
 end
