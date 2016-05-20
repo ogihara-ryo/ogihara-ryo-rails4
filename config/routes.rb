@@ -23,6 +23,10 @@
 #                          PUT    /admin/blogs/:id(.:format)                admin/blogs#update
 #                          DELETE /admin/blogs/:id(.:format)                admin/blogs#destroy
 #                    admin GET    /admin(.:format)                          admin/menu#index
+#                    blogs GET    /blogs(.:format)                          blogs#index
+#                     blog GET    /blogs/:id(.:format)                      blogs#show
+#          blog_categories GET    /blog_categories(.:format)                blog_categories#index
+#            blog_category GET    /blog_categories/:id(.:format)            blog_categories#show
 #
 
 Rails.application.routes.draw do
