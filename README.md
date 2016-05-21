@@ -1,8 +1,8 @@
 # [Ogihara Ryo's Web site](http://ogihara-ryo.herokuapp.com)
 
 ## 開発環境
-- Ruby 2.3.0
-- Rails 4.2.5
+- Ruby 2.3.1
+- Rails 4.2.6
 
 ## インストール
 ```
