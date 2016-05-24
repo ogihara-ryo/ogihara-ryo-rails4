@@ -7,7 +7,8 @@ module ApplicationHelper
     end
   end
 
-  def link_to_blog_category(blog_category)
-    blog_category.present? ? link_to(blog_category.name, [:admin, blog_category]) : ''
+  def link_to_blog_category(blog_category, admin: false)
+    return '' if blog_category.blank?
+    link_to blog_category.name, [admin ? :admin : nil, blog_category]
   end
 end
