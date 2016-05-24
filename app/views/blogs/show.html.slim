@@ -1,15 +1,10 @@
 = provide :title, @blog.title
 
+= link_to_blog_category(@blog.category)
+
 h1 = @blog.title
+p.datetime = @blog.created_at
 
-dl
-  dt = t('activerecord.attributes.blog.category_id')
-  dd = link_to_blog_category(@blog.category)
-
-  dt = t('activerecord.attributes.blog.content')
-  dd = md_to_html(@blog.content, { tables: true, fenced_code_blocks: true }, { filter_html: true })
-
-  - if @blog.draft?
-    p = t('activerecord.attributes.blog.draft')
+= md_to_html(@blog.content, { tables: true, fenced_code_blocks: true }, { filter_html: true })
 
 = link_to t(:text_edit), edit_admin_blog_path(@blog) if signed_in?
