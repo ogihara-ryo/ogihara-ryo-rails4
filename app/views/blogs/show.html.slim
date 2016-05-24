@@ -12,4 +12,4 @@ dl
   - if @blog.draft?
     p = t('activerecord.attributes.blog.draft')
 
-= link_to t(:text_edit), edit_admin_blog_path(@blog)
+= link_to t(:text_edit), edit_admin_blog_path(@blog) if signed_in?
