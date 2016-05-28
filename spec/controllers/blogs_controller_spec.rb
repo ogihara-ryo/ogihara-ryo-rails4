@@ -9,11 +9,9 @@ RSpec.describe BlogsController, type: :controller do
   end
 
   describe 'GET #show' do
-    before do
-      @blog = create(:blog)
-      get :show, id: @blog.id
-    end
+    let(:blog) { create(:blog) }
+    before { get :show, id: blog.id }
     it { is_expected.to have_http_status(:success) }
-    it { expect(assigns(:blog)).to eq @blog }
+    it { expect(assigns(:blog)).to eq blog }
   end
 end
