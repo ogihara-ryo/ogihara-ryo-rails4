@@ -12,6 +12,14 @@ body {
     serif;
 }
 
+h2 {
+  font-size: 24px;
+  text-align: left;
+  border-left: 5px solid #444;
+  margin: 64px 0 24px 0px;
+  padding: 10px 0 10px 10px;
+}
+
 a {
   color: $font_color;
   text-decoration: none;
