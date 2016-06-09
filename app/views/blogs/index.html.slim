@@ -1,8 +1,9 @@
-- @blog_categories.each do |blog_category|
-  h2 = link_to blog_category.name, blog_category_path(blog_category)
+#blog_list
+  - @blog_categories.each do |blog_category|
+    h2 = link_to blog_category.name, blog_category_path(blog_category)
 
-  - blog_category.blogs.each do |blog|
-    ul
-      li = link_to blog.title, blog_path(blog)
+    - blog_category.blogs.each do |blog|
+      ul
+        li = link_to blog.title, blog_path(blog)
 
 = link_to t('text_new'), new_admin_blog_path if signed_in?
