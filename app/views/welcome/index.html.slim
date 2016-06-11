@@ -4,3 +4,12 @@ ul
   li = link_to 'Bitbucket', 'https://bitbucket.org/ogihara-ryo/'
   li = link_to 'Facebook', 'https://www.facebook.com/ryo.ogihara.5'
   li = link_to 'Twitter', 'https://twitter.com/OgiharaRyo'
+
+#blog_list
+  - Blog.all.each do |blog|
+    ul
+      li
+        h1 = link_to blog.title, blog_path(blog)
+        span = link_to blog.created_at
+
+= link_to t('text_new'), new_admin_blog_path if signed_in?
