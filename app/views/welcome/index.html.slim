@@ -10,6 +10,8 @@ ul
     ul
       li
         h1 = link_to blog.title, blog_path(blog)
-        span = blog.created_at
+        span.date-time
+          | Posted on&nbsp;
+          = l blog.created_at
 
 = link_to t('text_new'), new_admin_blog_path if signed_in?

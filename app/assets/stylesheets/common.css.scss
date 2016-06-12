@@ -49,6 +49,12 @@ nav#breadcrumbs ol {
   }
 }
 
+span.date-time {
+  font-size: 80%;
+  text-align: left;
+  color: #b8b8b8;
+}
+
 @media screen and (min-width: 768px) {
   $width: 768px;
 
