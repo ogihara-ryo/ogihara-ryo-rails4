@@ -1,6 +1,7 @@
 $font_color: #333333;
 $link_hover_color: #e01090;
 $border_color: #444;
+$break_border_color: #eaeaea;
 
 @import url('//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
 body {
@@ -45,6 +46,24 @@ nav#breadcrumbs ol {
 
     &:first-child:before {
       content: "";
+    }
+  }
+}
+
+#blog_list {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $break_border_color;
+
+    h1 {
+      line-height: 1.2;
+      margin: 0;
     }
   }
 }

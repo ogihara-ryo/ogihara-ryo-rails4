@@ -6,8 +6,8 @@ ul
   li = link_to 'Twitter', 'https://twitter.com/OgiharaRyo'
 
 #blog_list
-  - Blog.all.each do |blog|
-    ul
+  ul
+    - Blog.all.each do |blog|
       li
         h1 = link_to blog.title, blog_path(blog)
         span.date-time
