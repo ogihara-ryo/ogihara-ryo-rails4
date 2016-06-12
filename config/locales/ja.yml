@@ -49,3 +49,16 @@ ja:
         content: 本文
         category_id: カテゴリー
         draft: 下書き
+
+  date:
+    abbr_day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+  time:
+    formats:
+      default: '%A, %m %d, %Y %H:%M:%S'
