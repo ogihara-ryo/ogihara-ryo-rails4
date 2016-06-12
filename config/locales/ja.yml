@@ -51,7 +51,7 @@ ja:
         draft: 下書き
 
   date:
-    abbr_day_names:
+    day_names:
       - Sunday
       - Monday
       - Tuesday
