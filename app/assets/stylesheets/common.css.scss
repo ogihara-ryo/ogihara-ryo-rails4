@@ -2,6 +2,8 @@ $font_color: #555555;
 $link_hover_color: #e01090;
 $border_color: #444;
 $break_border_color: #eaeaea;
+$pre_font_color: #e0e0e0;
+$pre_background_color: #282c34;
 
 @import url('//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
 body {
@@ -74,6 +76,15 @@ span.date-time {
   font-size: 80%;
   text-align: left;
   color: #b8b8b8;
+}
+
+pre {
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  font-size: 80%;
+  padding: 16px;
+  word-break: normal;
+  color: $pre_font_color;
+  background: $pre_background_color;
 }
 
 @media screen and (min-width: 768px) {
