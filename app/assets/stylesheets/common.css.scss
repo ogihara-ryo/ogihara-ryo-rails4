@@ -96,11 +96,11 @@ blockquote {
   border: 3px solid $backquote_border_color;
   background-color: $backquote_background_color;
   z-index: 1;
-}
 
-blockquote p {
-  position: relative;
-  z-index: 3;
+  p {
+    position: relative;
+    z-index: 3;
+  }
 }
 
 blockquote:before {
