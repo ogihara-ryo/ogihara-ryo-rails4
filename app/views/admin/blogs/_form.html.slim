@@ -1,7 +1,7 @@
 = form_for [:admin, @blog] do |f|
+  = f.collection_select :category_id, BlogCategory.all, :id, :name
   = f.text_field :title, placeholder: t('activerecord.attributes.blog.title')
   = f.text_area :content, placeholder: t('activerecord.attributes.blog.content')
-  = f.collection_select :category_id, BlogCategory.all, :id, :name
   = f.check_box :draft
 
   = f.submit t('button.submit')
