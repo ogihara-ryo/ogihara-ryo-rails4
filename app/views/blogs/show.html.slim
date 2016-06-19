@@ -3,7 +3,7 @@
 = breadcrumbs(@blog.category)
 
 h1 = link_to @blog.title, @blog
-p.datetime = @blog.created_at
+span.date-time = l(@blog.created_at)
 
 = md_to_html(@blog.content, { tables: true, fenced_code_blocks: true }, { filter_html: true })
 
