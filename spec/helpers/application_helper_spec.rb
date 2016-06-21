@@ -24,8 +24,9 @@ RSpec.describe ApplicationHelper do
 
     context 'ブログカテゴリーのみを渡された場合' do
       it 'ブログカテゴリーへのハイパーリンクを返すこと' do
+        # TODO: 一時的に管理者ページへ飛ばす
         expect(link_to_blog_category(blog_category)).to eq <<-"EOS".gsub!(/(\n)/, '')
-<a href=\"#{blog_category_path(blog_category)}\">#{blog_category.name}</a>
+<a href=\"#{admin_blog_category_path(blog_category)}\">#{blog_category.name}</a>
         EOS
       end
     end
