@@ -1,5 +1,6 @@
 $base_font_size: 18px;
 $font_color: #555555;
+$thin_font_color: #b8b8b8;
 $link_hover_color: #e01090;
 $border_color: #444;
 $break_border_color: #eaeaea;
@@ -85,7 +86,7 @@ article {
 span.date-time {
   font-size: 80%;
   text-align: left;
-  color: #b8b8b8;
+  color: $thin_font_color;
 }
 
 pre {
