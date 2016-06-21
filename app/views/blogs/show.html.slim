@@ -1,7 +1,5 @@
 = provide :title, @blog.title
 
-= breadcrumbs(@blog.category)
-
 h1 = link_to @blog.title, @blog
 span.date-time = l(@blog.created_at)
 
