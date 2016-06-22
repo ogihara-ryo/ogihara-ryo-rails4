@@ -30,6 +30,14 @@ h2 {
   padding: 10px 0 10px 10px;
 }
 
+h3 {
+  font-size: 20px;
+  text-align: left;
+  border-bottom: 2px solid $break_border_color;
+  margin: 0 0 24px 0;
+  padding: 15px 0 5px 0;
+}
+
 a {
   color: $font_color;
   text-decoration: none;
