@@ -12,4 +12,13 @@ module ApplicationHelper
     # TODO: 一時的に管理者ページへ飛ばす
     link_to blog_category.name, [admin ? :admin : :admin, blog_category]
   end
+
+  def accounts
+    [
+      link_to('GitHub', 'https://github.com/ogihara-ryo', target: '_blank'),
+      link_to('Bitbucket', 'https://bitbucket.org/ogihara-ryo/', target: '_blank'),
+      link_to('Twitter', 'https://twitter.com/OgiharaRyo', target: '_blank'),
+      link_to('Facebook', 'https://www.facebook.com/ryo.ogihara.5', target: '_blank')
+    ].join(', ').html_safe
+  end
 end
