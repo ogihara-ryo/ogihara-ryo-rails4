@@ -7,10 +7,10 @@ module ApplicationHelper
     end
   end
 
-  def link_to_blog_category(blog_category, admin: false)
+  def link_to_blog_category(blog_category)
     return '' if blog_category.blank?
     # TODO: 一時的に管理者ページへ飛ばす
-    link_to blog_category.name, [admin ? :admin : :admin, blog_category]
+    link_to blog_category.name, [:admin, blog_category]
   end
 
   def accounts
