@@ -30,13 +30,5 @@ RSpec.describe ApplicationHelper do
         EOS
       end
     end
-
-    context 'ブログカテゴリーと admin: true を渡された場合' do
-      it '管理者用ブログカテゴリーへのハイパーリンクを返すこと' do
-        expect(link_to_blog_category(blog_category, admin: true)).to eq <<-"EOS".gsub!(/(\n)/, '')
-<a href=\"#{admin_blog_category_path(blog_category)}\">#{blog_category.name}</a>
-        EOS
-      end
-    end
   end
 end
