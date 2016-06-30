@@ -12,6 +12,8 @@
 #
 
 class Blog < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+  
   belongs_to :category, class_name: :BlogCategory
   validates :title, presence: true
 end
