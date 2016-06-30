@@ -35,6 +35,10 @@ gem 'annotate'
 # Markdown の パーサー
 gem 'redcarpet'
 
+# image upload
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development do
   # コーディングルールの準拠チェックを実施する
   gem 'rubocop'
