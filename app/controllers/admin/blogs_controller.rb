@@ -16,7 +16,7 @@ class Admin::BlogsController < Admin::SessionController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to admin_blog_path(@blog)
+      redirect_to blog_path(@blog)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::BlogsController < Admin::SessionController
 
   def update
     if @blog.update(blog_params)
-      redirect_to admin_blog_path(@blog)
+      redirect_to blog_path(@blog)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::BlogsController < Admin::SessionController
 
   def destroy
     @blog.destroy
-    redirect_to admin_blogs_path
+    redirect_to blogs_path
   end
 
   private

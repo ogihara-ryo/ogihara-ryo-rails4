@@ -30,7 +30,7 @@ RSpec.describe Admin::BlogsController, type: :controller do
         expect {
           post :create, blog: attributes_for(:blog)
         }.to change(Blog, :count)
-        expect(response).to redirect_to admin_blog_path(assigns[:blog])
+        expect(response).to redirect_to blog_path(assigns[:blog])
       end
     end
 
@@ -74,7 +74,7 @@ RSpec.describe Admin::BlogsController, type: :controller do
         expect(subject.content).to eq 'update_content'
         expect(subject.category_id).to eq @blog_category2.id
         expect(subject.draft).to eq true
-        expect(response).to redirect_to admin_blog_path(assigns[:blog])
+        expect(response).to redirect_to blog_path(assigns[:blog])
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe Admin::BlogsController, type: :controller do
       expect {
         delete :destroy, id: @blog
       }.to change(Blog, :count).by(-1)
-      expect(response).to redirect_to admin_blogs_path
+      expect(response).to redirect_to blogs_path
     end
   end
 end
