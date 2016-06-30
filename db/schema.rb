@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160630143649) do
     t.boolean  "draft",       default: true, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "image"
+    t.string   "image"
   end
 
   add_index "blogs", ["category_id"], name: "index_blogs_on_category_id", using: :btree

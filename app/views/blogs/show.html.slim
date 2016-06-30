@@ -4,5 +4,6 @@ h1 = link_to @blog.title, @blog
 span.date-time = l(@blog.created_at)
 
 = md_to_html(@blog.content, { tables: true, fenced_code_blocks: true }, { filter_html: true })
-= image_tag @blog.image_url(:thumb)
-= link_to t(:text_edit), edit_admin_blog_path(@blog) if signed_in?
+= image_tag @blog.image_url(:thumbnail)
+div
+  =link_to t(:text_edit), edit_admin_blog_path(@blog) if signed_in?
