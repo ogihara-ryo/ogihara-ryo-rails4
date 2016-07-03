@@ -49,7 +49,8 @@ class Admin::BlogsController < Admin::SessionController
       :title,
       :content,
       :category_id,
-      :draft
+      :draft,
+      :image
     )
   end
 end

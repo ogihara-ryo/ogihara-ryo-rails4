@@ -3,5 +3,6 @@
   = f.text_field :title, placeholder: t('activerecord.attributes.blog.title')
   = f.text_area :content, placeholder: t('activerecord.attributes.blog.content'), rows: 20
   = f.check_box :draft
+  = f.file_field :image
 
   = f.submit t('button.submit')
