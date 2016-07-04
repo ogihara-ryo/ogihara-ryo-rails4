@@ -5,7 +5,7 @@ ul
 
 #blog_list
   ul
-    - Blog.all.each do |blog|
+    - Blog.order(created_at: :desc).each do |blog|
       li
         h1 = link_to blog.title, blog_path(blog)
         span.date-time
